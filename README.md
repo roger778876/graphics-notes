@@ -46,6 +46,7 @@
 P3 (type)
 4 3 (dimensions)
 255 (colors)
+0 255 255 ...
 ... (image pixel data)
 ```
 - use Image Magick convert utility to convert .ppm to another format
