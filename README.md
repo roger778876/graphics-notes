@@ -1,5 +1,27 @@
-## 1/31, 2/1 Peering into the depths of color
+## 2/5 Drawing lines
 
+- Drawing lines on a computer is hard because everything has to be integers
+- We use octants instead of quadrants
+- One pixel is the smallest unit; so no half pixels
+
+***Bresenham's Line Algorithm***
+- Assume drawing a line in octant 1
+  - therefore ***slopes are between 0 and 1***
+- Assume integer endpoints of line
+- First pixel: given
+- Second pixel:
+  - must be adjacent to first pixel
+  - must be to the right (x + 1)
+  - must be either y + 1 or stay y
+  - pixel options: (x + 1, y) or (x + 1, y + 1)
+    - to see which option is better, plug both points into the line equation and see which one is closer
+    - use midpoint (x+1, y+ 1/2); plug into function that tells you how far point is from the line equation
+      - if = 0 (midpoint is on the line), choose either pixel
+      - if < 0 (midpoint is below the line), choose top pixel (x+1, y+1)
+      - if > 0 (midpoint is above the line), choose bottom pixel (x+1, y)
+
+
+## 1/31, 2/1 Peering into the depths of color
 ***Color Depth***
 - the amount of data used to represent a single pixel
   - 1 bit: 1 color, on or off
