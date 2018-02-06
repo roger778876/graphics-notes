@@ -1,4 +1,4 @@
-## 2/5 Drawing lines
+## 2/5, 2/6 Drawing lines
 
 - Drawing lines on a computer is hard because everything has to be integers
 - We use octants instead of quadrants
@@ -8,6 +8,7 @@
 - Assume drawing a line in octant 1
   - therefore ***slopes are between 0 and 1***
 - Assume integer endpoints of line
+- Assume drawing left to right
 - First pixel: given
 - Second pixel:
   - must be adjacent to first pixel
@@ -19,6 +20,28 @@
       - if = 0 (midpoint is on the line), choose either pixel
       - if < 0 (midpoint is below the line), choose top pixel (x+1, y+1)
       - if > 0 (midpoint is above the line), choose bottom pixel (x+1, y)
+    - how to test midpoint (x+1, y+ 1/2):
+      - Start with line equation y = mx + b
+        - 0 = mx - y + b
+        - 0 = (△y)x - (△x)y + (△x)b
+          - let A = △y, B = -△x, C = (△x)b
+        - 0 = Ax + By + C
+      - f(x,y) = Ax + By + C
+        - if point is on the line, f = 0
+        - if point is above line, f < 0 (y is bigger than it should be)
+        - if point is below line, f > 0 (y is smaller than it should be)
+      - Plug in midpoint (x+1, y+ 1/2) into f(x,y) and see whether it is above/below the line
+- ***Our octant 1 algorithm:***
+  - line from (x0, y0) -> (x1, y1)
+  - x = x0, y = y0
+  - d = 2A + B
+  - while (x <= x1)
+    - plot the point (x,y)
+    - if (d > 0)
+      - y++
+      - d = d + 2B
+    - x++
+    - d = d + 2A
 
 
 ## 1/31, 2/1 Peering into the depths of color
