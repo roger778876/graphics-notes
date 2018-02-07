@@ -1,4 +1,4 @@
-## 2/5, 2/6 Drawing lines
+## 2/5, 2/6, 2/7 Drawing lines
 
 - Drawing lines on a computer is hard because everything has to be integers
 - We use octants instead of quadrants
@@ -34,7 +34,7 @@
 - ***Our octant 1 algorithm:***
   - line from (x0, y0) -> (x1, y1)
   - x = x0, y = y0
-  - d = 2A + B
+  - d0 = 2A + B
   - while (x <= x1)
     - plot the point (x,y)
     - if (d > 0)
@@ -42,6 +42,26 @@
       - d = d + 2B
     - x++
     - d = d + 2A
+    
+- ***Octant 2 lines***
+  - Possible options: (x, y+1) or (x+1, y+1)
+  - Midpoint: (x+ 1/2, y+1)
+  - d0 = A + 2B
+  - while (y <= y1)
+    - plot the point (x,y)
+    - if (d < 0)
+      - x++
+      - d = d + 2A
+    - y++
+    - d = d + 2B
+  
+- ***Octant 8 lines***
+  - Possible options: (x+1, y) or (x+1, y-1)
+  - Midpoint: (x+1, y- 1/2)
+  - d0 = 2A - B
+  - if (d < 0)
+  
+- We only care about drawing octants 1, 2, 7, 8 because other octants are just reflections
 
 
 ## 1/31, 2/1 Peering into the depths of color
