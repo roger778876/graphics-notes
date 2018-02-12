@@ -1,3 +1,14 @@
+## 2/12 Representing Image Data
+To transform/scale/etc. images, we need to store the endpoints of our lines in something.
+We can't just store the points, because we need to know how they connect to each other.
+
+***Edge List (aka Edge Matrix)***
+- Each point (pair of coordinates) is added to a list where every 2 points defines a line
+- 2D arrays/lists
+- Advantages: simple, easy to draw disjoint/separate shapes
+- Disadvantages: repeating values
+
+
 ## 2/5, 2/6, 2/7 Drawing lines
 
 - Drawing lines on a computer is hard because everything has to be integers
