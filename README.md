@@ -1,12 +1,45 @@
-## 2/12 Representing Image Data
+## 2/13 Transformations
+Translation, dilation, rotation (affine transformations)
+ - preserves # vertices & orientation
+ - reversable
+  
+- E = edge matrix, T = transformation matrix
+  - should be T * E
+  - T is square matrix
+  
+***Translation***
+- move an image somewhere
+- (x,y,z) --T(a,b,c)--> (x+a, y+b, z+c)
+- {1, 0, 0, a} * {x} = {x+a}
+  {0, 1, 0, b}   {y}   {y+b}
+  {0, 0, 1, c}   {z}   {z+c}
+  {0, 0, 0, 1}   {1}   { 1 }
+- always going to be 4x4 transformation matrix * 4xN edge matrix
+
+
+## 2/12, 2/13 Representing Image Data (Edge Lists)
 To transform/scale/etc. images, we need to store the endpoints of our lines in something.
 We can't just store the points, because we need to know how they connect to each other.
 
 ***Edge List (aka Edge Matrix)***
 - Each point (pair of coordinates) is added to a list where every 2 points defines a line
 - 2D arrays/lists
+- should have an even number of elements
 - Advantages: simple, easy to draw disjoint/separate shapes
 - Disadvantages: repeating values
+
+***Matrix Mathematicals***
+- Matrix Multiplication:
+  - (A rows x B columns) * (B rows x C columns)
+    - # rows in second matrix must equal # of columns in first matrix
+    - final dimension = A rows x C columns
+  - not commutative
+  - multiply elements of each row in first matrix by elements of each corresponding column in second matrix
+- Multiplicative Identity:
+  - M * I = M
+  - square matrix with a diagonal of all 1's, and 0's everywhere else
+  - (1 0) (a) = (a)
+    (0 1) (b)   (b)
 
 
 ## 2/5, 2/6, 2/7 Drawing lines
