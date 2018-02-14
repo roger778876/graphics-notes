@@ -10,7 +10,8 @@ Translation, dilation, rotation (affine transformations)
 ***Translation***
 - move an image somewhere
 - (x,y,z) --T(a,b,c)--> (x+a, y+b, z+c)
-- ```{1, 0, 0, a} * {x} = {x+a}
+- ```
+  {1, 0, 0, a} * {x} = {x+a}
   {0, 1, 0, b}   {y}   {y+b}
   {0, 0, 1, c}   {z}   {z+c}
   {0, 0, 0, 1}   {1}   { 1 }
