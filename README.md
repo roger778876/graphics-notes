@@ -33,7 +33,7 @@ We can't just store the points, because we need to know how they connect to each
 ***Matrix Mathematicals***
 - Matrix Multiplication:
   - (A rows x B columns) * (B rows x C columns)
-    - # rows in second matrix must equal # of columns in first matrix
+    - the # rows in second matrix must equal # of columns in first matrix
     - final dimension = A rows x C columns
   - not commutative
   - multiply elements of each row in first matrix by elements of each corresponding column in second matrix
