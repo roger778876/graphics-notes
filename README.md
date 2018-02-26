@@ -1,4 +1,33 @@
-## 2/13 Transformations
+## 2/26 Transformations -> Rotations
+- (x0, y0) --rotation--> (x1, y1)
+- Use polar coordinates:
+ - x0 = rcosϕ
+ - y0 = rsinϕ
+ - x1 = rcos(ϕ + θ)
+  - x1 = rcosϕcosθ + rsinϕsinθ
+       = x0cosθ + y0sinθ
+ - y1 = rsin(ϕ + θ)
+  - y1 = rsinϕcosθ + rcosϕsinθ
+       = y0cosθ + xsinθ
+- (x0, y0, z) --> (x0cosθ + y0sinθ, y0cosθ + xsinθ, z)
+
+
+## 2/26 Transformations -> Dilations
+- Enlarging or shrinking
+- (x, y, z) * scale factor a = (ax, ay, az)
+- ```
+  {a, 0, 0, 0} * {x} = {ax}
+  {0, a, 0, 0}   {y}   {ay}
+  {0, 0, a, 0}   {z}   {az}
+  {0, 0, 0, a}   {1}   {1 }
+  ```
+ - this assumes dilation with respect to the origin
+
+- You can dilate by different scale factors for each coordinate
+ - (ax, by, cz)
+
+
+## 2/13 Transformations -> Translations
 Translation, dilation, rotation (affine transformations)
  - preserves # vertices & orientation
  - reversable
