@@ -1,15 +1,22 @@
-## 2/26 Transformations -> Rotations
+## 2/26, 2/27 Transformations -> Rotations
 - (x0, y0) --rotation--> (x1, y1)
 - Use polar coordinates:
- - x0 = rcosϕ
- - y0 = rsinϕ
- - x1 = rcos(ϕ + θ)
-  - x1 = rcosϕcosθ + rsinϕsinθ
-       = x0cosθ + y0sinθ
- - y1 = rsin(ϕ + θ)
-  - y1 = rsinϕcosθ + rcosϕsinθ
-       = y0cosθ + xsinθ
-- (x0, y0, z) --> (x0cosθ + y0sinθ, y0cosθ + xsinθ, z)
+  - x0 = rcosϕ
+  - y0 = rsinϕ
+  - x1 = rcos(ϕ + θ)
+    - x1 = rcosϕcosθ + rsinϕsinθ
+         = x0cosθ + y0sinθ
+  - y1 = rsin(ϕ + θ)
+    - y1 = rsinϕcosθ + rcosϕsinθ
+         = y0cosθ + xsinθ
+- **(x0, y0, z) --> (x0cosθ + y0sinθ, y0cosθ + xsinθ, z)**'
+
+- rotation matrix
+- ```
+ 
+  ```
+
+
 
 
 ## 2/26 Transformations -> Dilations
