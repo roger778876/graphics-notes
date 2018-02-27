@@ -1,4 +1,26 @@
-## 2/26, 2/27 Transformations -> Rotations
+## 2/27 Combining Transformations
+- E = our edge matrix
+- T = translation matrix
+- R = rotation matrix
+- D = dilation matrix
+
+- T x E = E1 ; moving image
+- R x E1 = E2 ; rotating image
+- D x E2 = E3 ; dilating image
+- order of transformations: translate, rotate, dilate
+  - the order is important; matrix multiplication isn't commutative
+  
+- E3 = D x R x T x E
+  - read transformations from right to left
+  - matrix multiplication is associative; you can group transformations together
+  - E3 = (D x R x T) x E
+    - this saves work when E is a big edge matrix
+- we will create a "master" transformation matrix that contains all the transformations we want
+  - keep adding onto it when wanting new transformations
+  - multiply by edge matrix at very end
+
+
+## 2/26, 2/27 Transformations > Rotations
 - (x0, y0) --rotation--> (x1, y1)
 - Use polar coordinates:
   - x0 = rcosϕ
@@ -11,15 +33,34 @@
          = y0cosθ + xsinθ
 - **(x0, y0, z) --> (x0cosθ + y0sinθ, y0cosθ + xsinθ, z)**'
 
-- rotation matrix
+- **rotation matrix**
 - ```
- 
+  {cosθ, -sinθ, 0, 0} * {x} = {xcosθ - ysinθ}
+  {sinθ, cosθ, 0,  0}   {y}   {ycosθ + xsinθ}
+  {   0,   0,  1,  0}   {z}   {     z       }
+  {   0,   0,  0,  1}   {1}   {     1       }
   ```
+  
+- Axis of rotation is the coordinate that you aren't changing (x, y, or z)
+  - in this case, we are rotating about the z-axis
+  - if we rotate about a different axis, we will have a different rotation matrix
+  - when rotating about different axis, we want to rotate around the xyz coordinate grid
+  - ex: **when rotating about x-axis**
+    - y0 = rcosϕ
+    - z0 = rsinϕ
+    - y1 = ycosθ - zsinθ
+    - z1 = zcosθ + ysinθ
+    - x stays the same
+  - ex: **when rotating about y-axis**
+    - z0 = rcosϕ
+    - x0 = rsinϕ
+    - z1 = zcosθ - xsinθ
+    - x1 = xcosθ + zsinθ
+    - y stays the same
+- Rotating shapes that aren't on origin can be done by translating to origin, rotating about origin, translating back
 
 
-
-
-## 2/26 Transformations -> Dilations
+## 2/26 Transformations > Dilations
 - Enlarging or shrinking
 - (x, y, z) * scale factor a = (ax, ay, az)
 - ```
@@ -34,7 +75,7 @@
  - (ax, by, cz)
 
 
-## 2/13 Transformations -> Translations
+## 2/13 Transformations > Translations
 Translation, dilation, rotation (affine transformations)
  - preserves # vertices & orientation
  - reversable
