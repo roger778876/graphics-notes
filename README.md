@@ -1,24 +1,55 @@
-  ## 3/6
-  ### Hermite Curves
-  * ie: drawing y=x^3 given information:
-  * p0 and p1 --> endpoint
-  * R0 and R1 --> rates of change
-  * f(t) = at^3 + bt^2 + ct + d --> points on the curve
-  * f'(t) = 3at^2 + 2bt + c --> rates of change
-  * when t = 0, f(t) = d = p0, f'(t) = c
-  * when t = 1, f'(t) = c = R0
-  * matrices H , C, G:
-  *  [0001]   times [a] eq  [p0]
-  *  [1111]   times [b]  eq [p1]
-  *  [0010]   times [c] eq  [r0]
-  *  [3210]   times [d] eq [r1]
-  * H • C = G
-  * H'• G = C
+## 3/7 Bezier Curves
+- **Inputs**: end points, control points (that pull curve in directions)
+  - curve of degree N needs N + 1 input points
+
+- **Line**: needs 2 points (2 end points)
+  - P0 -> P1
+  - Pt = P0 + ∆Pt
+       = (1-t)P0 + tP1
+    - when t = 0, Pt = P0
+    - when t = 1, Pt = P1
+    - as t goes from 0 to 1, P1 gains more control over the shape from P0
+      - as t goes from 0 -> 1, P0 -> P1
+
+- **Quadratic**: needs 3 points
+  - Q0 moves along line P0P1
+  - Q1 moves along line P1P2
+  - Qt moves along line Q0Q1
+  - Q0 = (1-t)P0 + tP1
+  - Q1 = (1-t)P1 + tP2
+  - Qt = (1-t)Q0 + tQ1
+    - Qt = (1-t)((1-t)P0 + tP1) + t((1-t)P1 + tP2)
+    -    = (1-t)^2 P0 + t(1-t)P1 + t(1-t)P1 + t^2 P2
+    - Qt = (1-t)^2 P0 + 2t(1-t)P1 + t^2 P2
+      - behaves like binomial expansion
+  
+- **Cubic**: needs 4 points
+  - boils down to quadratic then line, etc.
+  - Rt moves along line R0R1
+  - R0 moves along quadratic Q0Q1
+  - R1 moves along quadratic Q1Q2
+  - Rt = (1-t)^3 P0 + 3t(1-t)^2 P1 + 3t^2 (1-t)P2 + t^3 P3
+    - binomial expansion again!
+  
+
+## 3/6 Hermite Curves
+* ie: drawing y=x^3 given information:
+* p0 and p1 --> endpoint
+* R0 and R1 --> rates of change
+* f(t) = at^3 + bt^2 + ct + d --> points on the curve
+* f'(t) = 3at^2 + 2bt + c --> rates of change
+* when t = 0, f(t) = d = p0, f'(t) = c
+* when t = 1, f'(t) = c = R0
+* matrices H , C, G:
+*  [0001]   times [a] eq  [p0]
+*  [1111]   times [b]  eq [p1]
+*  [0010]   times [c] eq  [r0]
+*  [3210]   times [d] eq [r1]
+* H • C = G
+* H'• G = C
  
  
- ## 3/5
- ## Parametric Equations
- 
+ ## 3/5 Parametric Equations
  * Define a curve as a system of equations with an independent variable (t)
  * x=f(t) y=g(t) z=h(t)
  * line (x0, y0) --> (x1, y1) 
