@@ -1,3 +1,47 @@
+  ## 3/6
+  ### Hermite Curves
+  * ie: drawing y=x^3 given information:
+  * p0 and p1 --> endpoint
+  * R0 and R1 --> rates of change
+  * f(t) = at^3 + bt^2 + ct + d --> points on the curve
+  * f'(t) = 3at^2 + 2bt + c --> rates of change
+  * when t = 0, f(t) = d = p0, f'(t) = c
+  * when t = 1, f'(t) = c = R0
+  * matrices H , C, G:
+  *  [0001]   times [a] eq  [p0]
+  *  [1111]   times [b]  eq [p1]
+  *  [0010]   times [c] eq  [r0]
+  *  [3210]   times [d] eq [r1]
+  * H • C = G
+  * H'• G = C
+ 
+ 
+ ## 3/5
+ ## Parametric Equations
+ 
+ * Define a curve as a system of equations with an independent variable (t)
+ * x=f(t) y=g(t) z=h(t)
+ * line (x0, y0) --> (x1, y1) 
+ * f(t) = (∆x)t + x0, t: 0 --> 1
+ * g(t) = (∆y)t + y0
+ 
+ ### General Parametric Framework
+ * for t: 0 --> 1
+ * x=f(t) y=g(t) z=h(t) 
+ * add(x,y,z)
+ 
+ ### Circles 
+ * center (xc, yc)
+ * x = rcos(theta) + xc
+ * y = rsin(theta) + yc
+ * theta: 0 --> 2pi
+ * theta = 2pi(t)
+ 
+ ### Splines
+ * special curves that can be designed to connect smoothly
+ * we will only use cubic splines
+ 
+
 ## 2/27 Combining Transformations
 - E = our edge matrix
 - T = translation matrix
