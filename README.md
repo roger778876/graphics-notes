@@ -1,4 +1,4 @@
-## 3/7 Bezier Curves
+## 3/7, 3/8 Bezier Curves
 - **Inputs**: end points, control points (that pull curve in directions)
   - curve of degree N needs N + 1 input points
 
@@ -36,6 +36,18 @@
     - binomial expansion again!
     
   ![bezier cubic](https://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif)
+  
+- **Making the equations more efficient**
+  - cubic Rt becomes (-P0 + 3P1 - 3P2 + P3)t^3 + (3P0 - 6P1 + 3P2)t^2 + (-3P0 + 3P1)t + P0
+    - becomes At^3 + Bt^2 + Ct + D
+    - you can then create a Bezier matrix * Input point matrix = Coefficients matrix
+    - ```
+       [-1 3 -3 1] * [P0] = [A]
+       [3 -6  3 0]   [P1]   [B]
+       [-3 3  0 0]   [P2]   [C]
+       [ 1 0  0 0]   [P3]   [D]
+      ```
+- to create a smooth connection between two Bezier curves, have the same endpoint and same control point
   
 
 ## 3/6 Hermite Curves
