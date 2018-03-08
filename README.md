@@ -10,6 +10,8 @@
     - when t = 1, Pt = P1
     - as t goes from 0 to 1, P1 gains more control over the shape from P0
       - as t goes from 0 -> 1, P0 -> P1
+      
+  ![bezier line](https://upload.wikimedia.org/wikipedia/commons/0/00/B%C3%A9zier_1_big.gif)
 
 - **Quadratic**: needs 3 points
   - Q0 moves along line P0P1
@@ -22,6 +24,8 @@
     -    = (1-t)^2 P0 + t(1-t)P1 + t(1-t)P1 + t^2 P2
     - Qt = (1-t)^2 P0 + 2t(1-t)P1 + t^2 P2
       - behaves like binomial expansion
+      
+  ![bezier quadratic](https://upload.wikimedia.org/wikipedia/commons/3/3d/B%C3%A9zier_2_big.gif)
   
 - **Cubic**: needs 4 points
   - boils down to quadratic then line, etc.
@@ -30,6 +34,8 @@
   - R1 moves along quadratic Q1Q2
   - Rt = (1-t)^3 P0 + 3t(1-t)^2 P1 + 3t^2 (1-t)P2 + t^3 P3
     - binomial expansion again!
+    
+  ![bezier cubic](https://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif)
   
 
 ## 3/6 Hermite Curves
