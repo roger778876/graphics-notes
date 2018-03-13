@@ -1,3 +1,42 @@
+## 3/13 3D Shapes (Box, Sphere, Torus)
+- z values will be modifiers of x and y coordinates
+ - helps to create 3D shapes
+
+- **Box**:
+
+  ![box](http://www.clker.com/cliparts/J/T/5/i/Z/j/dado.svg)
+  - Defining points: Vertices
+  - Givens:
+    - Starting point P0 (top left front)
+    - Dimensions: height, width, depth --> (x, y, z)
+
+- **Sphere**:
+
+  ![sphere](https://static1.squarespace.com/static/57eb17d4cd0f68f1cb3917ed/t/58e30eb5e4fcb56f58926499/1490917386536/?format=300w)
+  - Defining points: Points along the surface
+  - Givens:
+    - Center
+    - Radius
+  - Generate a sphere by rotating a circle
+		- x-axis
+		- y-axis
+		- z-axis: steering wheel
+	- x-axis rotation matrix:
+		- ```
+				[1    0     0] * [rcosθ] = [  rcosθ  ]
+				[0 cosϕ -sinϕ]   [rsinθ]   [rsinθcosϕ]
+				[0 sinϕ  cosϕ]   [  0  ]   [rsinθsinϕ]
+			```
+			- θ = angle of circle creation
+				- goes from 0 to 2pi
+			- ϕ = angle of circle rotation
+				- goes from 0 to pi
+			
+			OR (rotating semicircle)
+			- θ goes from 0 to pi
+			- ϕ goes from 0 to 2pi
+
+
 ## 3/7, 3/8 Bezier Curves
 - **Inputs**: end points, control points (that pull curve in directions)
   - curve of degree N needs N + 1 input points
