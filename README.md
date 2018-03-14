@@ -1,12 +1,12 @@
-## 3/13 3D Shapes (Box, Sphere, Torus)
+## 3/13, 3/14 3D Shapes (Box, Sphere, Torus)
 - z values will be modifiers of x and y coordinates
  - helps to create 3D shapes
 
 - **Box**:
 
   ![box](http://www.clker.com/cliparts/J/T/5/i/Z/j/dado.svg)
-  - Defining points: Vertices
-  - Givens:
+  - Defining points (points in the edge matrix): Vertices
+  - Givens (points needed to draw it):
     - Starting point P0 (top left front)
     - Dimensions: height, width, depth --> (x, y, z)
 
@@ -18,14 +18,15 @@
     - Center
     - Radius
   - Generate a sphere by rotating a circle
+	
 		- x-axis
 		- y-axis
-		- z-axis: steering wheel
+		- z-axis: (doesn't work b/c it becomes a steering wheel)
 	- x-axis rotation matrix:
 		- ```
-				[1    0     0] * [rcosθ] = [  rcosθ  ]
-				[0 cosϕ -sinϕ]   [rsinθ]   [rsinθcosϕ]
-				[0 sinϕ  cosϕ]   [  0  ]   [rsinθsinϕ]
+				[1    0     0] * [rcosθ] = [  rcosθ  ] x (becomes x,y,z after adding cx,cy,cz)
+				[0 cosϕ -sinϕ]   [rsinθ]   [rsinθcosϕ] y
+				[0 sinϕ  cosϕ]   [  0  ]   [rsinθsinϕ] z
 			```
 			- θ = angle of circle creation
 				- goes from 0 to 2pi
@@ -35,7 +36,47 @@
 			OR (rotating semicircle)
 			- θ goes from 0 to pi
 			- ϕ goes from 0 to 2pi
-
+			
+	- **Sphere pseudocode**:
+		- (semicircle)
+		- for ϕ: 0->2pi
+			- for θ: 0->pi
+				- x = rcosθ + cx
+				- y = rsinθcosϕ + cy
+				- z = rsinθsinϕ + cz
+				
+- **Torus**:
+	
+	![torus](http://paulbourke.net/geometry/torus/torus4.gif)
+	- Defining points: points on the surface
+	- Given:
+		- radius of tube
+		- radius of donut
+		- center
+		
+	- Generate torus by translating then rotating circle around axis:
+		- x-axis: will make a sphere
+		- y-axis: torus!
+		- z-axis: makes a washer
+	
+		- if we translate over x (move left/right), we have to rotate about y-axis
+		- if we translate over y (move up/down), we have to rotate about x-axis
+		
+	- Starting circle (translate over x, y-axis rotation):
+		- x = rcosθ + R; R = radius of donut
+		- y = rsinθ
+		- z = 0
+		
+		- y-axis rotation matrix:
+		- ```
+				[cosϕ  0 sinϕ] * [rcosθ + R] = cosϕ(rcosθ + R)  --> x (becomes x,y,z after adding cx,cy,cz)
+				[  0   1   0 ]   [  rsinθ  ]   rsinθ						--> y
+				[-sinϕ 0 cosϕ]   [    0    ]   -sinϕ(rcosθ + R) --> z
+			```
+		
+		- θ goes from 0 to 2pi
+		- ϕ goes from 0 to 2pi
+		
 
 ## 3/7, 3/8 Bezier Curves
 - **Inputs**: end points, control points (that pull curve in directions)
