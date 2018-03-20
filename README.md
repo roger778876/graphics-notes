@@ -1,3 +1,26 @@
+## 3/20 Vector Math Review
+- Vectors have magnitude and direction
+	- <x, y, z> is vector notation
+- Magnitude of vector:
+	- ||A|| = sqrt(Ax^2 + Ay^2 + Az^2)
+	- vector with magnitude = 1 is a unit vector/normalized vector
+		- A hat = (1/ ||A||) * <Ax, Ay, Az>
+
+- **Dot Product**:
+	- give back scalar value
+	- as angle between the two vectors decrease, output will incress
+	- A • B = ||A|| ||B|| cosθ
+	- or A • B = AxBx + AyBy + AzBz
+		
+- **Cross Product**:
+	- gives back vector value
+	- result is perpendicular to A and B
+		- order matters because there are 2 results perpendicular to A and B
+		- use right hand rule (index = first, middle = second, thumb = result)
+	- magnitude = parallelogram created by A and B
+	- A x B = ||A|| ||B|| sinθ
+
+
 ## 3/13, 3/14 3D Shapes (Box, Sphere, Torus)
 - z values will be modifiers of x and y coordinates
  - helps to create 3D shapes
