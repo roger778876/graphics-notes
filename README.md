@@ -1,4 +1,28 @@
-## 3/20 Vector Math Review
+## 3/23 Polygons
+- There are 2 ways to render a 3D object:
+	- wireframe mesh vs. polygon mesh
+
+- **Wireframe Mesh**:
+	- shape is defined by connecting points on the surface with **edges/lines**
+	- generate_sphere -> add_sphere -> add_edge -> add_point ==> draw_lines -> draw_line
+		- "->" means "calls"
+	- but doesn't have a surface!
+		- so you cannot paint the object
+
+- **Polygon Mesh**:
+	- shape is defined by connecting points on the surface with **polygons/planes**
+		- usually triangles or quadrilaterals; we will use triangles b/c they're the smallest unit of polygon
+	- generate_sphere -> add_sphere -> **add_polygons** -> add_point ==> **draw_polygons** -> draw_line
+		- "->" means "calls"
+	- easy to tell which objects are in front, etc.
+	
+- **Polygon (Triangle) Matrix**:
+	- our edge matrices store pairs of points
+	- our polygon matrices will store triangles (triplets of points)
+	- points must be in counterclockwise order
+
+
+## 3/20, 3/23 Vector Math Review
 - Vectors have magnitude and direction
 	- <x, y, z> is vector notation
 - Magnitude of vector:
@@ -19,6 +43,12 @@
 		- use right hand rule (index = first, middle = second, thumb = result)
 	- magnitude = parallelogram created by A and B
 	- A x B = ||A|| ||B|| sinθ
+		- instead of that, we want to use:
+			- <(AyBz - AzBy), (AzBx - AxBz), (AxBy - AyBx)>
+			
+- Two points can give you two possible vectors:
+	- PQ --> <Qxyz - Pxyz>
+	- QP --> <Pxyz - Qxyz>
 
 
 ## 3/13, 3/14 3D Shapes (Box, Sphere, Torus)
