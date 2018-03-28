@@ -1,3 +1,31 @@
+## 3/28 Backface Culling
+- Only drawing the polygons that are forward-facing
+
+- Surfaces have "surface normal" vector that's perpendicular to surface and points out of surface
+![surface](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Surface_normals.svg/300px-Surface_normals.svg.png)
+- We know we can't see a surface when its surface normal is pointing away from us
+	- surface has a "view" vector, which is vector from surface to viewer/camera
+	- angle θ between normal and view vector
+	- if angle θ is between -90 and 90 deg, then surface is viewable & draw polygon
+	
+- **1. Find surface normal**:
+	- use cross-product & counterclockwise stuff, etc.
+	- ex:
+		- P0, P1, P2 in counterclockwise order
+		- N = A x B
+			- A = <P1-P0>
+			- B = <P2-P0>
+
+- **2. Find θ**:
+	- use dot-product
+	- N • V = ||N|| ||V|| cosθ
+		- see if cosθ is positive; if true, then θ is in range -90 to 90, so draw surface!
+		- therefore, the magnitudes ||N|| and ||V|| don't matter
+		- we only care about the **z component of vector N**; if z is positive, then draw
+	- How to define V?:
+		- V = <0, 0, 1>
+
+
 ## 3/23 Polygons
 - There are 2 ways to render a 3D object:
 	- wireframe mesh vs. polygon mesh
