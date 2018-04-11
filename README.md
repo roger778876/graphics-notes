@@ -1,3 +1,21 @@
+## 4/11 Relative Coodinate System
+- making transformations easier
+- Currently, we generate triangles/edges first and then apply transformations to these matrices
+- In a RCS, transformations are applied to the "current" coordinate system, which modifies shapes when they are generated
+
+- Each shape has its own coordinate system
+
+**Drawing in a RCS**:
+	1. Generate polygons/edges
+	2. Modify those points by the current coordinate system
+	3. Draw the image
+	
+- It would be hard to draw figures that have connected shapes (like a robot)
+	- independent control will make it hard to move the figure around
+
+- have list of coordinate systems that gives control & independence
+
+
 ## 3/28 Backface Culling
 - Only drawing the polygons that are forward-facing
 
