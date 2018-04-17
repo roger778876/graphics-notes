@@ -1,3 +1,29 @@
+## 4/17 Coloring in our triangles
+- Ways to color our triangles: flood fill, fan-line fill, scanlines
+	- we should use scanlines, which don't repeat pixels, draw horizontal lines
+	
+**Scanline Conversion**:
+	- process of filling in polygons by drawing consecutive horizontal (or vertical!) lines
+	- need to find top, bottom, & middle vertices
+	- need to find the endpoints of each scanline
+	
+	- Y starts at Ybottom
+	- Y ends at Ytop
+	- Y += 1
+	
+	- X0 is on the line bottom-top
+	- X0 starts at Xbottom
+	- X0 ends at Xtop
+	- X0 += change in X/change in Y
+	
+	- X1 is on the line middle-top or bottom-middle
+	- X1 starts at Xbottom
+	- X1 ends at Xtop
+	- X1 changes at middle
+	- X1 += 1
+	
+
+
 ## 4/11 Relative Coodinate System
 - making transformations easier
 - Currently, we generate triangles/edges first and then apply transformations to these matrices
