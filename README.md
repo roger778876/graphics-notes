@@ -1,4 +1,4 @@
-## 4/17 Coloring in our triangles
+## 4/17, 4/18, 4/19 Coloring in our triangles
 - Ways to color our triangles: flood fill, fan-line fill, scanlines
 	- we should use scanlines, which don't repeat pixels, draw horizontal lines
 	
@@ -22,6 +22,16 @@
 	- X1 changes at middle
 	- X1 += 1
 	
+4/18 notes lost :(
+
+**Z-buffering**:
+	- 2D array of floating point values that directly corresponds to the screen
+	- before plotting the pixels to the screen, we check the z value against the z-buffer
+	- initialize the z buffer with the smallest possible value in your language
+	- **what to modify?**
+		- draw_line needs to generate z values
+		- scanline conversion needs to generate z values
+		- plot needs to look at/modify the z buffer
 
 
 ## 4/11 Relative Coodinate System
