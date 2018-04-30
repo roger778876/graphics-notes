@@ -1,4 +1,4 @@
-## 4/26, 4/27 Lighting
+## 4/26, 4/27, 4/30 Lighting - Phong Reflection Model
 
 ![reflections](https://taskercode.files.wordpress.com/2011/07/lighting6401.png)
 
