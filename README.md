@@ -4,28 +4,38 @@
 
 **Phong Reflection Model**
 ...insert notes from 4/26...
+- the grand finale: **I = Ambient + Diffuse + Specular = AKa + PKd(N ⋅ L) + PKs((2(N⋅L)N - L) ⋅ V)^x**
+	- this will give us a new color based on the lighting
 
 **Diffuse Reflection**
-	- light comes from one place, but is reflected in all directions evenly
-	- matte finishes; surfaces that aren't smooth
-	- we have to know: where the light is coming from, the angle of incidence of the light
-	- we calculate diffuse reflection strength using dot product (cosθ) between vector L (vector from surface to light source) and surface normal vector
-		- cosθ = N ⋅ L
-		- this cosθ gives us the percentage of reflection
-			- higher angle = less strength, lower angle = more strength
-	- we also need to know the point light color (0-255), and constant of diffuse reflection (0-1)
-	- Diffuse reflection = (Point light color) * (Constant of diffuse reflection) * (N ⋅ L)
-		- the only variable we have to actually calculate is N; everything else is set in the code
+- light comes from one place, but is reflected in all directions evenly
+- matte finishes; surfaces that aren't smooth
+- we have to know: where the light is coming from, the angle of incidence of the light
+- we calculate diffuse reflection strength using dot product (cosθ) between vector L (vector from surface to light source) and surface normal vector
+	- cosθ = N ⋅ L
+	- this cosθ gives us the percentage of reflection
+		- higher angle = less strength, lower angle = more strength
+- we also need to know the point light color (0-255), and constant of diffuse reflection (0-1)
+- Diffuse reflection = (Point light color) * (Constant of diffuse reflection) * (N ⋅ L) = PKd(N ⋅ L)
+	- the only variable we have to actually calculate is N; everything else is set in the code
 		
 **Specular Reflection**
-	- light comes from one place, but is reflected in only one direction
-	- shiny, glossy surfaces
-	- we calculate specular reflection strength based on angle α between reflection vector and view vector, and angle θ between light source and surface normal
-	- we want to figure out R ⋅ V, so we need to figure out R
-		- let T be vector lying on normal, with same height as the line that connects the tips of L and R
-		- let S be vector connecting tops of L and R
-			- S = T - L
-		- R = T + S = T + T - L = 2T - L
+- light comes from one place, but is reflected in only one direction
+- shiny, glossy surfaces
+- we calculate specular reflection strength based on angle α between reflection vector (R) and view vector (V), and angle θ between light source and surface normal
+- we want to figure out cos α, which is R ⋅ V, so we need to figure out R
+	- let T be vector lying on normal, with same height as the line that connects the tips of L and R
+	- let S be vector connecting tops of L and R
+		- S = T - L
+	- R = T + S = T + T - L = 2T - L
+		- cos θ = L ⋅ N = ||T|| / ||L|| = ||T||
+		- T = ||T|| (N)
+	- therefore, **R = 2(N ⋅ L)N - L**
+	- therefore, **cos α = R ⋅ V = (2(N⋅L)N - L) ⋅ V**
+- Specular reflection = PKs((2(N⋅L)N - L) ⋅ V)^x
+	- x is an arbitrary exponent used to simulate how quickly the reflection decreases
+	- what value do we use? just mess around with it!
+	
 		
 	
 
