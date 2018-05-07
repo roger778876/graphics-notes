@@ -1,13 +1,24 @@
+## 5/7 Improving our graphics language
+- compiler to turn source code into executable
+	- compilers are made of 5 pieces of technology
+	- source code --> lexer > syntactic analyzer > semantic analyzer > optimizer (usually) > code generator --> executable
+	
+**Lexer**:
+	- performs lexical analysis
+	- knows the valid keywords, literal formats, and identifies formats
+	- doesn't perform any structural analysis
+	- outputs a list of tokens from source code
+	
 ## 4/26, 4/27, 4/30 Lighting - Phong Reflection Model
 
 ![reflections](https://taskercode.files.wordpress.com/2011/07/lighting6401.png)
 
-**Phong Reflection Model**
+**Phong Reflection Model**:
 ...insert notes from 4/26...
 - the grand finale: **I = Ambient + Diffuse + Specular = AKa + PKd(N ⋅ L) + PKs((2(N⋅L)N - L) ⋅ V)^x**
 	- this will give us a new color based on the lighting
 
-**Diffuse Reflection**
+**Diffuse Reflection**:
 - light comes from one place, but is reflected in all directions evenly
 - matte finishes; surfaces that aren't smooth
 - we have to know: where the light is coming from, the angle of incidence of the light
@@ -19,7 +30,7 @@
 - Diffuse reflection = (Point light color) * (Constant of diffuse reflection) * (N ⋅ L) = PKd(N ⋅ L)
 	- the only variable we have to actually calculate is N; everything else is set in the code
 		
-**Specular Reflection**
+**Specular Reflection**:
 - light comes from one place, but is reflected in only one direction
 - shiny, glossy surfaces
 - we calculate specular reflection strength based on angle α between reflection vector (R) and view vector (V), and angle θ between light source and surface normal
