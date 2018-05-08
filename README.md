@@ -1,13 +1,27 @@
-## 5/7 Improving our graphics language
+## 5/7, 5/8 Improving our graphics language
 - compiler to turn source code into executable
 	- compilers are made of 5 pieces of technology
 	- source code --> lexer > syntactic analyzer > semantic analyzer > optimizer (usually) > code generator --> executable
 	
 **Lexer**:
-	- performs lexical analysis
-	- knows the valid keywords, literal formats, and identifies formats
-	- doesn't perform any structural analysis
-	- outputs a list of tokens from source code
+- performs lexical analysis
+- knows the valid keywords, literal formats, and identifies formats
+- doesn't perform any structural analysis
+- takes in source code and outputs a list of tokens from source code
+	- types of tokens: **grouping symbols** (; {} () :), **operators** (. ->), **identifiers** (functions & variables), **keywords**, **literals**, **comments**...	
+- tools: c-lex, flex, javacc
+- 	```
+		ID [a-zA-Z][a-zA-Z0-9_]*
+		%%
+		[ \t\n ] + ;
+		\-?[0-9]+ |
+		more stuff...
+	```
+	
+**Parser (syntactic analyzer)**:
+- takes in token list and outputs a syntax tree
+- organizes tokens so that they can be used later
+
 	
 ## 4/26, 4/27, 4/30 Lighting - Phong Reflection Model
 
