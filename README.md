@@ -1,4 +1,4 @@
-## 5/7, 5/8 Improving our graphics language
+## 5/7, 5/8, 5/9 Improving our graphics language
 - compiler to turn source code into executable
 	- compilers are made of 5 pieces of technology
 	- source code --> lexer > syntactic analyzer > semantic analyzer > optimizer (usually) > code generator --> executable
@@ -21,6 +21,13 @@
 **Parser (syntactic analyzer)**:
 - takes in token list and outputs a syntax tree
 - organizes tokens so that they can be used later
+- checks the token list for valid structure
+- knows the grammar of the language
+- tools: yacc, bison, javacc
+
+**Semantic analyzer**:
+- takes in syntax tree and outputs an operation list and symbol table
+- checks if structure makes sense
 
 	
 ## 4/26, 4/27, 4/30 Lighting - Phong Reflection Model
