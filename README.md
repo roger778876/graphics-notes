@@ -28,6 +28,10 @@
 **Semantic analyzer**:
 - takes in syntax tree and outputs an operation list and symbol table
 - checks if structure makes sense
+- creates a list of instructions that represents the program
+- creates list of identifiers and associated info (symbol table)
+- type mismatches are caught when th symbol table is created
+- outputs operation list and symbol table
 
 	
 ## 4/26, 4/27, 4/30 Lighting - Phong Reflection Model
