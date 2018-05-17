@@ -1,3 +1,11 @@
+## 5/17 Animation
+- generate multiple frames w/ small differences between each
+- applying transformations over time
+- knobs are time frames in animation
+- vary m0/knob
+	- define knob behavior
+
+
 ## 5/7, 5/8, 5/9 Improving our graphics language
 - compiler to turn source code into executable
 	- compilers are made of 5 pieces of technology
