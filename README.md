@@ -1,9 +1,18 @@
-## 5/17 Animation
+## 5/17, 5/18, 5/21 Animation
 - generate multiple frames w/ small differences between each
 - applying transformations over time
 - knobs are time frames in animation
 - vary m0/knob
 	- define knob behavior
+
+insert notes from 5/18
+**3 Passes**:
+- Setup
+- Vary
+- Draw
+
+**Structure for storing knob values**:
+- list of dictionaries
 
 
 ## 5/7, 5/8, 5/9 Improving our graphics language
