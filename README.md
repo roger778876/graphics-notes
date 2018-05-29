@@ -1,3 +1,21 @@
+## 5/29 Shading Models
+- how/when we calculate the color for our shapes
+- we've been using "flat shading"
+	- we calculate "I" once per polygon
+- Gouraud shading model
+	- calculate "I" three times per polygon (at the vertices)
+	- generate new color values when doing scanline conversion
+	- interpolate "I" in scanline conversion and drawline
+- Phong shading model
+	- calculate "I" for every pixel
+	- interpolate the surface normal scanline conversion and drawline
+	
+**Calculating surface normals for Gouraud & Phong shading**:
+- every point on a polygon has the same surface normal
+- vertex normal = "average" of surface normals
+	- calculated by combining the suface normals of all polygons that share the same vertex
+
+
 ## 5/17, 5/18, 5/21 Animation
 - generate multiple frames w/ small differences between each
 - applying transformations over time
