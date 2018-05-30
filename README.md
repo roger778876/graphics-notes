@@ -1,4 +1,4 @@
-## 5/29 Shading Models
+## 5/29, 5/30 Shading Models
 - how/when we calculate the color for our shapes
 - we've been using "flat shading"
 	- we calculate "I" once per polygon
@@ -14,6 +14,11 @@
 - every point on a polygon has the same surface normal
 - vertex normal = "average" of surface normals
 	- calculated by combining the suface normals of all polygons that share the same vertex
+
+- Create a hash table of vertices; normals update as you go through the polygon list
+- At the end, we will normalize all the vertex normals
+- We should normalize all the surface normals before adding them to the vertex normal
+
 
 
 ## 5/17, 5/18, 5/21 Animation
